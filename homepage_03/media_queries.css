@@ -1,0 +1,51 @@
+@media screen and (max-width:900px){
+    .nav-links, .auth-buttons {
+        display:none;
+    }
+
+    .nav-toggle{
+        display:block;
+    }
+
+    .logo img{
+        height: 2.2rem;
+
+    }
+
+    .header-container{
+        padding:15px;
+        display:flex;
+        justify-content: space-between;
+    }
+    
+    .container{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin:0 6rem;
+    }
+
+    .left-div h1{
+        font-size:2.4rem;
+        
+        
+    }
+
+    .left-div{
+        margin-right:0;
+    }
+
+    .main-container{
+        display:flex;
+        flex-direction: column;
+        margin:20px;
+        padding:0;
+    }
+
+    .stat-item h2{
+        font-size: 2.8rem;
+    }
+    
+}

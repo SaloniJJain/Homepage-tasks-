@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <script type="text/javascript">
+      window.tailwind.config = {
+        darkMode: ['class'],
+        theme: {
+          extend: {
+            colors: {
+              border: 'hsl(var(--border))',
+              input: 'hsl(var(--input))',
+              ring: 'hsl(var(--ring))',
+              background: 'hsl(var(--background))',
+              foreground: 'hsl(var(--foreground))',
+              primary: {
+                DEFAULT: 'hsl(var(--primary))',
+                foreground: 'hsl(var(--primary-foreground))'
+              },
+              secondary: {
+                DEFAULT: 'hsl(var(--secondary))',
+                foreground: 'hsl(var(--secondary-foreground))'
+              },
+              destructive: {
+                DEFAULT: 'hsl(var(--destructive))',
+                foreground: 'hsl(var(--destructive-foreground))'
+              },
+              muted: {
+                DEFAULT: 'hsl(var(--muted))',
+                foreground: 'hsl(var(--muted-foreground))'
+              },
+              accent: {
+                DEFAULT: 'hsl(var(--accent))',
+                foreground: 'hsl(var(--accent-foreground))'
+              },
+              popover: {
+                DEFAULT: 'hsl(var(--popover))',
+                foreground: 'hsl(var(--popover-foreground))'
+              },
+              card: {
+                DEFAULT: 'hsl(var(--card))',
+                foreground: 'hsl(var(--card-foreground))'
+              },
+              fuelYellow: {
+                DEFAULT: '#FFD700',
+                foreground: 'hsl(var(--foreground))'
+              }
+            },
+            fontFamily: {
+              poppins: ['Poppins', 'sans-serif'],
+              nunito: ['Nunito Sans', 'sans-serif']
+            },
+          },
+        }
+      }
+    </script>
+    <style type="text/tailwindcss">
+
+      @layer base {
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap');
+        :root {
+          --background: 0 0% 100%;
+          --foreground: 240 10% 3.9%;
+          --card: 0 0% 100%;
+          --card-foreground: 240 10% 3.9%;
+          --popover: 0 0% 100%;
+          --popover-foreground: 240 10% 3.9%;
+          --primary: 240 5.9% 10%;
+          --primary-foreground: 0 0% 98%;
+          --secondary: 240 4.8% 95.9%;
+          --secondary-foreground: 240 5.9% 10%;
+          --muted: 240 4.8% 95.9%;
+          --muted-foreground: 240 3.8% 46.1%;
+          --accent: 240 4.8% 95.9%;
+          --accent-foreground: 240 5.9% 10%;
+          --destructive: 0 84.2% 60.2%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 5.9% 90%;
+          --input: 240 5.9% 90%;
+          --ring: 240 5.9% 10%;
+          --radius: 0.5rem;
+        }
+        .dark {
+          --background: 240 10% 3.9%;
+          --foreground: 0 0% 98%;
+          --card: 240 10% 3.9%;
+          --card-foreground: 0 0% 98%;
+          --popover: 240 10% 3.9%;
+          --popover-foreground: 0 0% 98%;
+          --primary: 0 0% 98%;
+          --primary-foreground: 240 5.9% 10%;
+          --secondary: 240 3.7% 15.9%;
+          --secondary-foreground: 0 0% 98%;
+          --muted: 240 3.7% 15.9%;
+          --muted-foreground: 240 5% 64.9%;
+          --accent: 240 3.7% 15.9%;
+          --accent-foreground: 0 0% 98%;
+          --destructive: 0 62.8% 30.6%;
+          --destructive-foreground: 0 0% 98%;
+          --border: 240 3.7% 15.9%;
+          --input: 240 3.7% 15.9%;
+          --ring: 240 4.9% 83.9%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-background p-8" style="background-image: url('images/Picsart_24-07-30_13-21-51-299\ \(1\).jpg'); background-size: cover; background-position: center; height: 100vh">
+      <header class="flex justify-between items-center mb-8">
+        <div class="text-xl font-bold text-primary font-poppins">SaaSto</div>
+        <nav class="hidden lg:flex space-x-4 font-nunito">
+          <a href="#" class="text-muted-foreground">Demos</a>
+          <a href="#" class="text-muted-foreground">Features</a>
+          <a href="#" class="text-muted-foreground">Pricing</a>
+          <a href="#" class="text-muted-foreground">Contact</a>
+          <a href="#" class="text-secondary text-secondary-foreground">Login</a>
+          <a href="#" class="bg-fuelYellow text-fuelYellow-foreground px-4 py-2 rounded-lg">Sign up</a>
+        </nav>
+        <button id="menu-button" class="lg:hidden text-black" onclick="toggleMenu()">☰</button>
+      </header>
+      <nav id="mobile-menu" class="hidden lg:hidden flex flex-col space-y-2 font-nunito bg-white p-4 rounded-lg">
+        <button class="self-end text-black" onclick="toggleMenu()">✖</button>
+        <a href="#" class="text-muted-foreground">Demos</a>
+        <a href="#" class="text-muted-foreground">Features</a>
+        <a href="#" class="text-muted-foreground">Pricing</a>
+        <a href="#" class="text-muted-foreground">Contact</a>
+        <a href="#" class="text-secondary text-secondary-foreground">Login</a>
+        <a href="#" class="bg-fuelYellow text-fuelYellow-foreground px-4 py-2 rounded-lg">Sign up</a>
+      </nav>
+      <main class="text-center mb-16">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-4 font-poppins">A collaborative Time Tracking that you Need</h1>
+        <p class="text-muted-foreground mb-6 font-nunito text-sm sm:text-base">An enim nullam tempor sapien gravida donec enim ipsum porta justo congue magna at pretium purus pretium ligula</p>
+        <a href="#" class="bg-fuelYellow text-fuelYellow-foreground px-4 py-2 rounded-lg font-nunito text-sm sm:text-base">Start 14 Days Trial</a>
+      </main>
+    </div>
+
+  
+<section class="bg-white p-8 mt-16 lg:mt-0 lg:w-full lg:py-16">
+  <div class="flex flex-col lg:flex-row lg:justify-center lg:items-center text-center gap-16">
+    <div>
+      <h2 class="text-5xl lg:text-4xl font-bold font-poppins">15k+</h2>
+      <p class="text-muted-foreground text-xl lg:text-base font-nunito">Active user</p>
+    </div>
+    <div>
+      <h2 class="text-5xl lg:text-4xl font-bold font-poppins">30k</h2>
+      <p class="text-muted-foreground text-xl lg:text-base font-nunito">Total Download</p>
+    </div>
+    <div>
+      <h2 class="text-5xl lg:text-4xl font-bold font-poppins">10k</h2>
+      <p class="text-muted-foreground text-xl lg:text-base font-nunito">Customer</p>
+    </div>
+  </div>
+</section>
+
+
+
+
+    <script>
+      function toggleMenu() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+        var button = document.getElementById('menu-button');
+        if (menu.classList.contains('hidden')) {
+          button.textContent = '☰';
+        } else {
+          button.textContent = '✖';
+        }
+      }
+    </script>
+  </body>
+</html>

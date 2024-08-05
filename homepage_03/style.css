@@ -1,0 +1,160 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background: linear-gradient(to bottom right, #FFFBF3, #F5FBFF, #FDFDFD); */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+
+.head{
+    width:100%;
+    overflow:hidden;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 80px;
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    overflow:hidden
+}
+
+.logo img {
+    height: 3.125rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-buttons .login, .auth-buttons .signup {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.auth-buttons .login {
+    background: transparent;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.auth-buttons .signup {
+    background: #28a745;
+    color: #fff;
+}
+
+.main-container {
+    display: flex;
+    margin: 4rem 18rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+span {
+    color: #28a745;
+}
+
+.left-div{
+    margin-right: 3rem;
+}
+
+.left-div h1 {
+    font-size: 3rem;
+}
+
+.left-div button {
+    color: white;
+    background-color: #28a745;
+    border-radius: 2rem;
+    border: none;
+    width: 9rem;
+    height: 2.8rem;
+}
+
+/* .right-div {
+    width: 70%;
+} */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 18rem;
+    background: transparent;
+}
+
+.container h2 {
+    font-size: 3.8rem;
+    margin: 0;
+}
+
+.container p {
+    color: gray;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.stats {
+    margin-top: 0rem;
+}
+
+.green-icon {
+    color: #28a745;
+    font-size: 2rem;
+    
+}
+
+.nav-toggle{
+    display:none;
+}
+
+.mobile-img {
+    width: 100%; /* Adjust based on your design */
+    max-width: 600px; /* Adjust based on your design */
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mobile-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Adjust as needed for your design */
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1); /* Light shadow to create a fade effect */
+    pointer-events: none; /* Ensures the overlay does not interfere with interactions */
+    mask-image: radial-gradient(circle, rgba(255,255,255,1) 30%, rgba(255,255,255,0) 100%);
+}
